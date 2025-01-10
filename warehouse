@@ -1,0 +1,17 @@
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({
+    headless: false
+  });
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://www.thewarehouse.co.nz/');
+  await page.getByRole('link', { name: 'storage' }).click();
+  await page.locator('div:nth-child(5) > .refinement-header').click();
+  await page.getByRole('button', { name: 'Refine by Product Type: Accessories (744)' }).click();
+
+  // ---------------------
+  await context.close();
+  await browser.close();
+})();
