@@ -15,9 +15,7 @@ test('pilot test', async({page})=>{
 
     await page.locator("//textarea[@id='Message-2']").fill("sample message")
 
-    await page.getByRole("button", {name: 'Send'}).click()
-
-    await page.waitForTimeout(3000)
+    await page.getByRole("button", {name: 'Send'}).click()    
     
 
 })
