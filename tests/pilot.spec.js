@@ -17,5 +17,5 @@ test('pilot test', async({page})=>{
 
     await page.getByRole("button", {name: 'Send'}).click()    
     
-    await page.waitForEvent(3000)
+    await page.waitForEvent(4000)
 })
